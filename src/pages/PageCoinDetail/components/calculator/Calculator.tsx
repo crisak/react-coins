@@ -45,7 +45,7 @@ export const Calculator = (props: Partial<CalculatorProps>) => {
     const equivalent = +(formData.equivalent || 0);
 
     return (amount || 0) * equivalent;
-  }, [formData.amount]);
+  }, [formData.amount, formData.equivalent]);
 
   return (
     <Box className="calculator">

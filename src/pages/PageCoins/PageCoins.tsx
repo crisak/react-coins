@@ -16,7 +16,7 @@ export const PageCoins = () => {
     return () => {
       dispatch(clearCoins());
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

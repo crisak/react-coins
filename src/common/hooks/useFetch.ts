@@ -1,12 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from "react";
 
 type RequestData<T> = () => Promise<T>;
-type FilterResponse<T, Y> = (data: T) => any;
+type FilterResponse<T> = (data: T) => any;
 type TypeDataState<T, Y> = Y extends undefined ? T : Y;
 
 export const useFetch = <T, Y = undefined>(
   requestDataProp: RequestData<T>,
-  filterResponseProp?: FilterResponse<T, Y>
+  filterResponseProp?: FilterResponse<T>
 ) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<TypeDataState<T, Y> | null>();
@@ -15,7 +16,7 @@ export const useFetch = <T, Y = undefined>(
   const getCoins = useCallback(
     async (
       requestDataP: RequestData<T>,
-      filterResponseP?: FilterResponse<T, Y>
+      filterResponseP?: FilterResponse<T>
     ) => {
       try {
         setError(null);

@@ -1,7 +1,6 @@
 import { RefObject, useEffect, useRef } from "react";
 import { DefaultProps } from "../../interfaces/DefaultProps";
 import { PlaceHolderLoadingRow } from "./PlaceHolderLoadingRow";
-import _ from "underscore";
 
 interface TableBodyProps {
   containerRef: RefObject<HTMLElement | null>;
@@ -59,6 +58,7 @@ export const TableBody = (props: DefaultProps<TableBodyProps>) => {
     if (trRef?.current && props?.containerRef.current) {
       listenerIntersection(props?.containerRef.current, trRef.current);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.containerRef, trRef]);
 
   return (

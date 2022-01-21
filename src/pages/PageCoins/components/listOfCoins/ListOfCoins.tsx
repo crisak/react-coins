@@ -71,6 +71,7 @@ export const ListOfCoins = (props: ListCoinsProps) => {
       ...prev,
       page: prev.page + 1
     }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listCoins, hasFilters, loadingCoins]);
 
   const tryRequestFail = () => {
@@ -79,10 +80,9 @@ export const ListOfCoins = (props: ListCoinsProps) => {
 
   useEffect(() => {
     if (paginate.page > 1) {
-      console.log("paginate.page.do request");
       doRequest(() => getAllCoins(+paginate.page, paginate.limit) as any);
     }
-  }, [paginate.page]);
+  }, [paginate.page, doRequest, paginate.limit]);
 
   useEffect(() => {
     if (paginate.page === 1) {
@@ -90,6 +90,7 @@ export const ListOfCoins = (props: ListCoinsProps) => {
     } else {
       dispatch(pushCoins(responseDataApi?.data || []));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [responseDataApi]);
 
   if (error && paginate.page === 1) {

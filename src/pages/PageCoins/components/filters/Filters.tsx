@@ -1,5 +1,5 @@
 import "./styles.scss";
-import { ChangeEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
 import { Box, Button } from "../../../../common/components";
 import { Input } from "../../../../common/components/input/Input";
 import { Select } from "../../../../common/components/select/Selects";
@@ -26,17 +26,20 @@ export const Filters = () => {
     return filters?.search || "";
   });
 
-  const filterAndUpdateCoins = (filtersUpdate: any) => {
-    const { filters: flt, coinsFiltered } = filterCoins(
-      { ...filtersUpdate },
-      coins as any
-    );
-    const filterDataAction = saveFilter(flt);
-    const coinsFilteredAction = saveCoinsFiltered(coinsFiltered);
+  const filterAndUpdateCoins = useCallback(
+    (filtersUpdate: any) => {
+      const { filters: flt, coinsFiltered } = filterCoins(
+        { ...filtersUpdate },
+        coins as any
+      );
+      const filterDataAction = saveFilter(flt);
+      const coinsFilteredAction = saveCoinsFiltered(coinsFiltered);
 
-    dispatch(filterDataAction);
-    dispatch(coinsFilteredAction);
-  };
+      dispatch(filterDataAction);
+      dispatch(coinsFilteredAction);
+    },
+    [coins, dispatch]
+  );
 
   const handlerOnChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -53,6 +56,7 @@ export const Filters = () => {
 
   const debounceFilterCoins = useMemo(() => {
     return debounce(filterAndUpdateCoins, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coins]);
 
   const handleOnChangeSearch = (refElement: ChangeEvent<HTMLInputElement>) => {
@@ -84,6 +88,7 @@ export const Filters = () => {
     if (filters.hasFilters) {
       filterAndUpdateCoins({ ...filters });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coins]);
 
   return (
