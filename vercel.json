@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "name": "coins",
+  "builds": [
+    {
+      "use": "@vercel/static-build",
+      "src": "package.json"
+    }
+  ],
+  "routes": [
+    {
+      "src": "(.*).js",
+      "dest": "/$1.js"
+    },
+    {
+      "src": "(.*).json",
+      "dest": "/$1.json"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    },
+    {
+      "src": "(.*).xml",
+      "dest": "/$1.xml"
+    },
+    {
+      "src": "(.*).png",
+      "dest": "/$1.png"
+    }
+  ]
+}

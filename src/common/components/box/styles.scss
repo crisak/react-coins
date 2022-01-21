@@ -1,0 +1,12 @@
+@use "src/styles/theme.scss" as *;
+
+.box {
+	padding: 20px;
+	width: 100%;
+	height: auto;
+	@include box-neomorphs;
+
+	&.box--inset {
+		@include box-shadow-inset-neomorphs;
+	}
+}

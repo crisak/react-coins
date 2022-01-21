@@ -1,0 +1,54 @@
+@use "src/styles/theme.scss" as *;
+.button {
+	width: auto;
+	border: none;
+	@include box-shadow-neomorphs(sm);
+
+	height: 50px;
+	padding: 0px 30px;
+
+	border-radius: calc($border-radius - 12px);
+	transition: all 0.3s;
+	font-size: 1rem;
+
+	&--icon {
+		display: flex;
+		align-items: center;
+
+		& > svg,
+		& > svg polyline {
+			color: $light-color;
+			stroke: $light-color;
+		}
+	}
+
+	&--color {
+		&-primary {
+			background-color: $secondary-color;
+		}
+
+		&-secondary {
+			background-color: $primary-color;
+			color: $light-color;
+		}
+	}
+
+	&--full {
+		width: 100%;
+	}
+
+	&:hover {
+		cursor: pointer;
+		@include box-shadow-neomorphs(xm);
+	}
+
+	&--text:active,
+	&:active {
+		@include box-shadow-inset-neomorphs(xm);
+	}
+
+	&--text,
+	&--text:hover {
+		box-shadow: none;
+	}
+}

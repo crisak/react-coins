@@ -1,0 +1,11 @@
+@use "src/styles/theme.scss" as *;
+
+.title {
+	color: $light-color;
+	font-size: 1.3rem;
+	font-weight: 500;
+	line-height: 2rem;
+	&__sub-content {
+		font-size: 1rem;
+	}
+}

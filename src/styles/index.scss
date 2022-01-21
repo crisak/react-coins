@@ -1,0 +1,8 @@
+@import "./resetCss.scss";
+@import "./theme.scss";
+@import "./rules";
+
+body {
+	background-color: $primary-color;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

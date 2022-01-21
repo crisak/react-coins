@@ -1,0 +1,15 @@
+@use "src/styles/theme.scss" as *;
+
+.divider {
+	--bg-color: $primary-color;
+	--box-shadow-inset: inset -3px -3px 5px $shadow-light, inset 3px 3px 5px $shadow-dark;
+	--box-shadow-inset-dense: inset -1px -1px 3px $shadow-light, inset 1px 1px 3px $shadow-dark;
+	--box-shadow: -2px -2px 5px $shadow-light, 2px 2px 5px $shadow-dark;
+	--box-shadow-dense: -1px -1px 3px $shadow-light, 1px 1px 3px $shadow-dark;
+
+	border: 0;
+	height: 7px;
+	border-radius: 10px;
+	background: $primary-color;
+	box-shadow: inset -3px -3px 5px $shadow-light, inset 3px 3px 5px $shadow-dark;
+}

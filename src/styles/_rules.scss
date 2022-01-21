@@ -1,0 +1,104 @@
+/**
+ * Padding
+ * pt1 = 0.5rem
+ * pt2 = 1rem
+ * ...
+ * pt7 = 3rem
+ * 
+ * Margins
+ * mt1 = 0.5rem
+ * mt2 = 1rem
+ * ...
+ * mt7 = 3rem
+ */
+
+$sizes: 0.5rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 3rem;
+$measures: top, bottom, right, left;
+$index: 1;
+@each $size in $sizes {
+	@each $measure in $measures {
+		$prefix: str-slice($measure, 1, 1);
+		.p#{$prefix}#{$index} {
+			padding-#{$measure}: $size !important;
+		}
+
+		.m#{$prefix}#{$index} {
+			margin-#{$measure}: $size !important;
+		}
+	}
+
+	.p#{$index} {
+		padding: $size !important;
+	}
+
+	.m#{$index} {
+		padding: $size !important;
+	}
+
+	$index: $index + 1;
+}
+
+/**
+ * head1 = 3rem
+ * head2 = 2.5rem
+ * head3 = 2rem
+ * ...
+ * head7 = 0.3rem
+ */
+$sizes-texts: 3rem, 2.5rem, 2rem, 1.5rem, 1rem, 0.5rem, 0.3rem;
+$index: 1;
+@each $size in $sizes-texts {
+	.head#{$index} {
+		font-size: $size;
+	}
+	$index: $index + 1;
+}
+
+/**
+ * w10 = 10%
+ * w20 = 20%
+ * ...
+ * w100 = 100%
+ */
+$widths: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+$index: 1;
+@each $width in $widths {
+	$value: $width * 10;
+	.w#{$value} {
+		width: #{$value} + "% !important";
+	}
+	$index: $index + 1;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-justify-center {
+	justify-content: center;
+}
+
+.flex-items-center {
+	align-items: center;
+}
+
+.txt-right {
+	text-align: right;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.cw {
+	color: $light-color;
+}
+
+.text {
+	&-primary {
+		color: $secondary-color !important;
+	}
+	&-light {
+		color: $light-color !important;
+	}
+}

@@ -1,0 +1,55 @@
+@import "./../../../styles/theme.scss";
+.table {
+	@include box-neomorphs(sm);
+
+	border: 0;
+	min-width: 100%;
+	white-space: nowrap;
+	table-layout: fixed;
+	border-collapse: collapse;
+
+	&__th {
+		color: $light-color;
+		font-size: 0.875rem;
+		line-height: 1.375rem;
+		font-weight: bold;
+		letter-spacing: 0.0071428571em;
+		text-decoration: inherit;
+		text-transform: inherit;
+		box-sizing: border-box;
+		text-align: left;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		padding: 16px;
+	}
+
+	&__tr:not(&__tr:last-child) {
+		border-bottom: 1px solid $shadow-light;
+		text-decoration: none;
+		transition: 0.5s;
+	}
+
+	&--hover .table__tr:hover {
+		border: none;
+		cursor: pointer;
+		box-shadow: inset 3px 3px 5px $shadow-light, inset -3px -3px 5px $shadow-dark;
+	}
+
+	&__header {
+		position: sticky;
+		top: 0;
+		background-color: #25282d;
+		& .table__tr:hover {
+			cursor: auto;
+			box-shadow: none;
+		}
+	}
+
+	&__td {
+		padding: 16px;
+		text-align: left;
+		vertical-align: middle;
+		color: $light-color;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,16 @@
+.page-not-found {
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	div {
+		width: 450px;
+		height: 420px;
+		background-image: url(./../../assets/img/404.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}

@@ -1,0 +1,25 @@
+.filters-coins {
+	display: flex;
+	justify-content: space-between;
+
+	.container-buttons {
+		width: 100%;
+		max-width: 600px;
+		display: flex;
+
+		$with-button: 177px;
+
+		.container-selects {
+			width: calc(100% - $with-button);
+			display: flex;
+		}
+
+		button {
+			width: $with-button;
+		}
+	}
+
+	.container-input {
+		width: 300px;
+	}
+}

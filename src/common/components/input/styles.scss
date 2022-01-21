@@ -1,0 +1,53 @@
+@use "src/styles/theme.scss" as *;
+
+.input-control {
+	display: block;
+	width: 100%;
+	cursor: text;
+	position: relative;
+	box-sizing: border-box;
+	color: $light-color;
+	transition: 0.2s ease-in-out;
+
+	label {
+		z-index: 2;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 16px;
+		right: auto;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		position: absolute;
+		cursor: text !important;
+		opacity: 0.6;
+		-webkit-tap-highlight-color: transparent !important;
+	}
+	input {
+		width: 100%;
+		$box-shadow-inset: inset 3px 3px 7px $shadow-dark, inset -3px -3px 8px $shadow-light;
+		$box-shadow-inset-thin: inset 3px 3px 5px $shadow-dark, inset -3px -3px 4px $shadow-light;
+
+		outline: none;
+		border: none;
+		height: 50px;
+		font-size: 1rem;
+		padding: 0 16px;
+		border-radius: calc($border-radius - 8px);
+		box-sizing: border-box;
+		color: $light-color;
+		background-color: $primary-color;
+		box-shadow: $box-shadow-inset;
+		transition: box-shadow 0.2s ease-in-out;
+		-webkit-tap-highlight-color: transparent !important;
+		&:disabled {
+			opacity: 0.8;
+			background-color: rgba(255, 255, 255, 0.105);
+		}
+		&:focus,
+		&:hover {
+			box-shadow: $box-shadow-inset-thin;
+		}
+	}
+}

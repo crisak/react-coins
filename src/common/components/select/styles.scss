@@ -1,0 +1,34 @@
+@use "src/styles/theme.scss" as *;
+
+.select {
+	appearance: none;
+	background-image: url("./../../../assets/icons/arrowtop.svg");
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+
+	width: 100%;
+	outline: none;
+	border: none;
+	height: 50px;
+	font-size: 1rem;
+	padding: 0 16px;
+	border-radius: calc($border-radius - 8px);
+	box-sizing: border-box;
+	color: $light-color;
+	word-wrap: normal;
+	text-transform: none;
+	background-color: $primary-color;
+	transition: box-shadow 0.5s;
+	@include box-shadow-neomorphs(sm);
+
+	&:disabled {
+		opacity: 0.8;
+		background-color: rgba(255, 255, 255, 0.105);
+	}
+	&:focus,
+	&:hover {
+		cursor: pointer;
+		@include box-shadow-neomorphs(xm);
+	}
+}

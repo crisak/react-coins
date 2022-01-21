@@ -1,0 +1,36 @@
+@use "src/styles/theme.scss" as *;
+.place-holder-loading {
+	overflow: hidden;
+
+	@include box-shadow-inset-neomorphs;
+
+	border-radius: $border-radius;
+	border: 0.5px solid $primary-color;
+
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	line-height: 1;
+	background: linear-gradient(90deg, rgb(0 0 0 / 13%), rgb(0 0 0 / 0%)) 0% 5%/208px 100% no-repeat, rgb(0 0 0 / 14%);
+	background-repeat: no-repeat;
+	animation: 1.2s ease-in-out 0s infinite normal none running placeholderAnimate;
+
+	&--linear-10 {
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)) 0% 5%/208px 100% no-repeat,
+			rgba(0, 0, 0, 0.1);
+		@include box-shadow-inset-neomorphs(xxm);
+		height: 9px;
+	}
+	&--linear-20 {
+		height: 18px;
+	}
+}
+
+@keyframes placeholderAnimate {
+	0% {
+		background-position: -200px 0px;
+	}
+	100% {
+		background-position: calc(200px + 100%) 0px;
+	}
+}

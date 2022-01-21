@@ -1,0 +1,17 @@
+@use "src/styles/theme.scss" as *;
+
+.page-coins {
+	height: 100%;
+	padding: $padding-page 0;
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: column;
+
+	&__list {
+		@include box-shadow-neomorphs(sm);
+		border-radius: $border-radius;
+		overflow-y: auto;
+		height: 100%;
+	}
+}

@@ -1,0 +1,53 @@
+/**
+ * xxm = 1
+ * xm = 2
+ * sm = 4
+ * md = 7
+ * lg = 10
+ */
+@mixin box-shadow-inset-neomorphs($size: md) {
+	@if $size == xxm {
+		box-shadow: inset -1px -1px 3px $shadow-light, inset 1px 1px 3px $shadow-dark;
+	}
+
+	@if $size == xm {
+		box-shadow: inset -2px -2px 5px $shadow-light, inset 2px 2px 5px $shadow-dark;
+	}
+
+	@if $size == sm {
+		box-shadow: inset -4px -4px 7px $shadow-light, 4px 4px 7px $shadow-dark;
+	}
+
+	@if $size == md {
+		box-shadow: inset -7px -7px 15px $shadow-light, inset 7px 7px 15px $shadow-dark;
+	}
+}
+@mixin box-shadow-neomorphs($size: md) {
+	@if $size == xxm {
+		box-shadow: 1px 1px 3px $shadow-dark, -1px -1px 3px $shadow-light;
+	}
+
+	@if $size == xm {
+		box-shadow: 2px 2px 5px $shadow-dark, -2px -2px 5px $shadow-light;
+	}
+
+	@if $size == sm {
+		box-shadow: 4px 4px 7px $shadow-dark, -4px -4px 7px $shadow-light;
+	}
+
+	@if $size == md {
+		box-shadow: 7px 7px 15px $shadow-dark, -7px -7px 15px $shadow-light;
+	}
+
+	@if $size == lg {
+		box-shadow: 10px 10px 20px $shadow-dark, -10px -10px 20px $shadow-light;
+	}
+}
+
+@mixin box-neomorphs($size: md) {
+	@include box-shadow-neomorphs($size);
+	background-color: $primary-color;
+	border: 0.5px solid $primary-color;
+	box-sizing: border-box;
+	border-radius: $border-radius;
+}

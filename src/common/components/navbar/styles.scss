@@ -1,0 +1,49 @@
+@use "src/styles/theme.scss" as *;
+
+.navbar {
+	width: $width-navbar;
+
+	margin-left: 20px;
+	margin-top: $padding-page;
+	margin-bottom: $padding-page;
+
+	$margin-total-height: $padding-page * 2;
+	height: calc(100% - $margin-total-height);
+
+	@include box-neomorphs;
+
+	display: flex;
+	flex-direction: column;
+
+	& > a {
+		margin: 15px;
+		height: 50px;
+		width: 50px;
+
+		background: $primary-color;
+		border: 0.330769px solid $primary-color;
+		box-sizing: border-box;
+		box-shadow: 4.63077px 4.63077px 19.8462px $shadow-dark, -4.63077px -4.63077px 19.8462px $shadow-light;
+		border-radius: 10.5846px;
+		color: $light-color;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		text-decoration: none;
+		transition: all 0.3s;
+
+		&:hover {
+			color: white;
+			outline: none;
+			color: $secondary-color;
+			@include box-shadow-neomorphs(sm);
+		}
+
+		&:active {
+			outline: none;
+			box-shadow: inset 6px 6px 13px $shadow-dark, inset -6px -6px 13px $shadow-light;
+		}
+	}
+}

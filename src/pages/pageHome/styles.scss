@@ -1,0 +1,20 @@
+@use "src/styles/theme.scss" as *;
+
+.page-home {
+	height: 100%;
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.container-image {
+		display: flex;
+		justify-content: center;
+		img {
+			border-radius: $border-radius;
+			max-height: 200px;
+			height: 100%;
+		}
+	}
+}
