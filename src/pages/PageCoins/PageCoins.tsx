@@ -1,23 +1,12 @@
-import { useEffect } from "react";
 import "./styles.scss";
 import { ListOfCoins } from "./components/listOfCoins/ListOfCoins";
 import { Filters } from "./components/filters/Filters";
 import { Container } from "../../common/components/container/Container";
 import { Title } from "../../common/components/title/Title";
 import { Paragraph } from "../../common/components/paragraph/Paragraph";
-import { useDispatch } from "react-redux";
-import { clearCoins } from "../../state/crypto/coinsActions";
 import { Helmet } from "react-helmet";
 
 export const PageCoins = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    return () => {
-      dispatch(clearCoins());
-    };
-  }, [dispatch]);
-
   return (
     <>
       <Helmet>

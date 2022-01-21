@@ -105,6 +105,10 @@ export const ListOfCoins = (props: ListCoinsProps) => {
 
   return (
     <>
+      <div className="mb5 text-light">
+        Total de registros:
+        <span className="text-primary ml2">{listCoins?.length || 0}</span>
+      </div>
       <section {...props} ref={containerTableRef}>
         <Table className="table--hover">
           <TableHeader>

@@ -202,9 +202,15 @@ export const filterCoins = (filter: Filters, coins: Coin[]): ResponseFilter => {
     });
   }
 
+  let hasFiltersData = true;
+
+  if (filter.cap === "0" && filter.price === "0" && !filter.search) {
+    hasFiltersData = false;
+  }
+
   return {
     filters: {
-      hasFilters: true,
+      hasFilters: hasFiltersData,
       search,
       price,
       cap
