@@ -76,5 +76,21 @@
 				font-size: 0.8rem;
 			}
 		}
+
+		flex-direction: column;
+		justify-content: center;
+	}
+	@media only screen and (max-width: $medium) {
+		flex-direction: column;
+		align-items: center;
+
+		h2,
+		.calculator,
+		.page-coin-detail__aside {
+			width: 90%;
+			text-align: center;
+			margin: 2rem auto;
+		}
+		padding-bottom: 7rem;
 	}
 }

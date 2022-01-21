@@ -1,3 +1,5 @@
+@use "src/styles/theme.scss" as *;
+
 .filters-coins {
 	display: flex;
 	justify-content: space-between;
@@ -21,5 +23,37 @@
 
 	.container-input {
 		width: 300px;
+	}
+
+	@media only screen and (max-width: $medium) {
+		flex-direction: column;
+		width: 94%;
+
+		.container-buttons {
+			width: 100%;
+			flex-direction: column;
+			padding-bottom: 1rem;
+			.container-selects {
+				width: 100%;
+				justify-content: space-between;
+				& > * {
+					width: 100%;
+					margin-right: 0 !important;
+				}
+				& > *:first-child {
+					margin-right: 3rem !important;
+				}
+			}
+		}
+		.container-input {
+			width: 100%;
+		}
+
+		& select,
+		& button,
+		& input {
+			width: 100%;
+			margin: 10px 0;
+		}
 	}
 }
