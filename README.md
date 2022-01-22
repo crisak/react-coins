@@ -1,10 +1,16 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). With node version `v16.13.1 (npm v8.1.2)`
 
-## Node version
+## Started
 
-`node v16.13.1 (npm v8.1.2)`
+Install dependencies run `npm i`. After `npm start` for run the app in the development mode
+
+## Demo
+
+https://coins-market-cap-crisak.vercel.app/
+
+Can you install app on your phone or your computer, since it implements PWA (Progressive Web Apps)
 
 ## Available Scripts
 
