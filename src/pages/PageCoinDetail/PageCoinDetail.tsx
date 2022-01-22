@@ -5,7 +5,8 @@ import {
   Box,
   Title,
   Paragraph,
-  Divider
+  Divider,
+  PlaceHolderLoading
 } from "../../common/components";
 import { useFetch } from "../../common/hooks/useFetch";
 import { getDetail } from "../../common/services/coinlore/coinloreApi";
@@ -17,7 +18,6 @@ import {
 } from "react-icons/ai";
 import { IoPricetagOutline } from "react-icons/io5";
 import { Calculator } from "./components/calculator/Calculator";
-import { PlaceHolderLoading } from "../../common/components/placeHolderLoading/PlaceHolderLoading";
 import { Coin } from "../../common/services/coinlore/Coin";
 import { currencyFormat } from "../../common/utils";
 import { Helmet } from "react-helmet";

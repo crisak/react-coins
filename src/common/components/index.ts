@@ -8,3 +8,5 @@ export * from "./divider/Divider";
 export * from "./placeHolderLoading/PlaceHolderLoading";
 export * from "./navbar/Navbar";
 export * from "./layout/Layout";
+export * from "./input/Input";
+export * from "./select/Selects";

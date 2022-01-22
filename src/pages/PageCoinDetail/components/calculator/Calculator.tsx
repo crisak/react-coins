@@ -1,7 +1,6 @@
-import { useState, ChangeEvent, useMemo } from "react";
 import "./styles.scss";
-import { Box, Title } from "../../../../common/components";
-import { Input } from "../../../../common/components/input/Input";
+import { useState, ChangeEvent, useMemo } from "react";
+import { Box, Title, Input } from "../../../../common/components";
 import { currencyFormat } from "../../../../common/utils";
 
 const initialState = {

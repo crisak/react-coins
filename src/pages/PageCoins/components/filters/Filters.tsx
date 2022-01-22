@@ -1,8 +1,6 @@
 import "./styles.scss";
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
-import { Box, Button } from "../../../../common/components";
-import { Input } from "../../../../common/components/input/Input";
-import { Select } from "../../../../common/components/select/Selects";
+import { Select, Box, Button, Input } from "../../../../common/components";
 import { useDispatch, useSelector } from "react-redux";
 import { saveCoinsFiltered, saveFilter } from "../../../../state/crypto";
 import { capListOptions, filterCoins, priceOptions } from "./service";
